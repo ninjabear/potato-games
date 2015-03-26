@@ -29,8 +29,14 @@ public class Tournament {
 
         List<Potato> winners = battles.parallelStream().map(Battle::getWinner).collect(Collectors.toList());
 
-        if (winners.size() != 1)
+        if (winners.size() != 1) {
+            winners.stream().forEach(w -> System.out.println("Round #" + round + " winner; " + w));
             play(winners, round + 1);
+        }
+        else {
+            System.out.println("");
+            System.out.println("Winning Potato; " + winners.get(0));
+        }
 
     }
 

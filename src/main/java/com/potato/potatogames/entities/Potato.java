@@ -23,4 +23,11 @@ public class Potato {
         return name;
     }
 
+    @Override
+    public String toString()
+    {
+        return getName();
+    }
+
+
 }
